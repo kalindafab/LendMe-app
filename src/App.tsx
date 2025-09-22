@@ -10,6 +10,7 @@ import { WagmiProvider } from 'wagmi';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 
+
 import { config } from './config/wagmi';
 import { WalletConnection } from './components/WalletConnection';
 import { Dashboard } from './components/Dashboard';
@@ -17,6 +18,7 @@ import { DepositForm } from './components/forms/DepositForm';
 import { BorrowForm } from './components/forms/BorrowForm';
 import { RepayForm } from './components/forms/RepayForm';
 import { useUserData } from './hooks/useUserData';
+import ScrollVelocity from './components/ui/ScrollVelocity';
 
 const queryClient = new QueryClient();
 
@@ -55,6 +57,7 @@ const AppContent: React.FC = () => {
             </div>
           </div>
         ) : (
+           <>
           <div className="text-center py-16">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Welcome to DeFi LendMe
@@ -64,7 +67,14 @@ const AppContent: React.FC = () => {
               and managing your DeFi lending positions with our secure and user-friendly platform.
             </p>
           </div>
-        )}
+          <ScrollVelocity
+      texts={['TYpeshit', 'bitch']}
+      velocity={120}
+      className="custom-scroll-text"
+    />
+     </>
+        )
+        }
       </div>
     </div>
   );
