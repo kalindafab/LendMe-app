@@ -19,6 +19,10 @@ import { BorrowForm } from './components/forms/BorrowForm';
 import { RepayForm } from './components/forms/RepayForm';
 import { useUserData } from './hooks/useUserData';
 import ScrollVelocity from './components/ui/ScrollVelocity';
+import PixelCard from './/components/ui/PixelCard';
+
+
+
 
 const queryClient = new QueryClient();
 
@@ -72,6 +76,17 @@ const AppContent: React.FC = () => {
       velocity={120}
       className="custom-scroll-text"
     />
+    <div className="flex flex-row gap-6 justify-center">
+    <PixelCard variant="pink" className="h-64 w-64">
+  // your card content (use position: absolute)
+</PixelCard>
+<PixelCard variant="pink">
+  // your card content (use position: absolute)
+</PixelCard>
+<PixelCard variant="pink">
+  // your card content (use position: absolute)
+</PixelCard>
+</div>
      </>
         )
         }
