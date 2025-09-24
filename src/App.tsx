@@ -47,13 +47,13 @@ const AppContent: React.FC = () => {
           </div>
         </header>
 
-        {/* Main Content */}
+
         {isConnected ? (
           <div className="space-y-8">
-            {/* Dashboard */}
+          
             <Dashboard userData={userData} loading={loading} />
             
-            {/* Action Forms */}
+         
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <DepositForm onDeposit={deposit} loading={loading} />
               <BorrowForm onBorrow={borrow} loading={loading} userData={userData} />
@@ -72,21 +72,47 @@ const AppContent: React.FC = () => {
             </p>
           </div>
           <ScrollVelocity
-      texts={['TYpeshit', 'bitch']}
+     texts={[ 'Borrow Instantly', 'Earn Rewards']}
       velocity={120}
       className="custom-scroll-text"
     />
-    <div className="flex flex-row gap-6 justify-center">
-    <PixelCard variant="pink" className="h-64 w-64">
-  // your card content (use position: absolute)
-</PixelCard>
-<PixelCard variant="pink">
-  // your card content (use position: absolute)
-</PixelCard>
-<PixelCard variant="pink">
-  // your card content (use position: absolute)
-</PixelCard>
-</div>
+    
+   <section className="py-16 bg-gray-50">
+  <h2 className="text-3xl font-bold text-center mb-12">
+    How It Works
+  </h2>
+
+  <div className="flex flex-col sm:flex-row gap-8 justify-center items-start">
+   
+    <PixelCard variant="pink" className="h-72 w-64 relative">
+      <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center">
+        <h3 className="text-xl font-semibold mb-2">Deposit Collateral</h3>
+        <p className="text-gray-700 text-sm">
+          Deposit your crypto assets securely to start earning interest or use as collateral.
+        </p>
+      </div>
+    </PixelCard>
+
+   
+    <PixelCard variant="pink" className="h-72 w-64 relative">
+      <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center">
+        <h3 className="text-xl font-semibold mb-2">Borrow Assets</h3>
+        <p className="text-gray-700 text-sm">
+          Borrow funds against your deposited collateral instantly and flexibly.
+        </p>
+      </div>
+    </PixelCard>
+    <PixelCard variant="pink" className="h-72 w-64 relative">
+      <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center">
+        <h3 className="text-xl font-semibold mb-2">Repay & Withdraw</h3>
+        <p className="text-gray-700 text-sm">
+          Repay your loans and withdraw your collateral anytime without hassle.
+        </p>
+      </div>
+    </PixelCard>
+  </div>
+</section>
+
      </>
         )
         }
