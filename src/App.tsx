@@ -20,19 +20,19 @@ import { RepayForm } from './components/forms/RepayForm';
 import { useUserData } from './hooks/useUserData';
 import ScrollVelocity from './components/ui/ScrollVelocity';
 import PixelCard from './/components/ui/PixelCard';
+import { link } from 'motion/react-client';
+import FlowingMenu from './components/ui/Features';
+import FeaturesSection from './components/ui/Features';
+import Footer from './components/ui/Footer';
 
 
 
 
 const queryClient = new QueryClient();
-
-/**
- * Main application content component
- * Handles the core application logic after wallet connection
- */
 const AppContent: React.FC = () => {
   const { address, isConnected } = useAccount();
   const { userData, loading, deposit, borrow, repay } = useUserData(address);
+ 
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -113,6 +113,9 @@ const AppContent: React.FC = () => {
   </div>
 </section>
 
+  <FeaturesSection />
+  <Footer/>
+
      </>
         )
         }
@@ -122,8 +125,7 @@ const AppContent: React.FC = () => {
 };
 
 /**
- * Root App component with providers
- * Sets up the necessary context providers for wagmi, React Query, and RainbowKit
+ * Sets up the necessary context providers for wagmi,React Query,and RainbowKit
  */
 function App() {
   return (
